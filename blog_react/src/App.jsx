@@ -11,9 +11,18 @@ import { Routes, Route, useNavigate } from "react-router-dom";
 
 function App() {
   return (
-    <div>
-      <h1>BLOG PRACTICE FOR REACT</h1>
-    </div>
+    <>
+      <Header />
+      <Nav />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/newpost" element={<NewPost />} />
+        <Route path="/post/:id" element={<PostPage />} />
+        <Route path="/about" element={<About />} />
+        <Route path="*" element={<Missing />} />
+      </Routes>
+      <Footer />
+    </>
   );
 }
 
